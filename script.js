@@ -30,6 +30,25 @@
  * You can also add your own tests and debug statements at the bottom of this file.
  *
  */
+let todoItems = []; // intialize todo item, empty to start with
+
+// 1. addToDoItem(text)
+addToDoItem('breakfast');
+console.log("Proof I've added an item to todo list >> "+todoItems[0].text);
+
+// 2. removeToDoItem(todoId)
+removeToDoItem(0);
+console.log("Proof I've deleted an item to todo list >> "+todoItems.length);
+
+// 3. markToDoItemAsCompleted'(todoId)
+markToDoItemAsCompleted(0);
+
+
+// 4. deleteToDoItem'(todoId)
+
+
+// 5. clearCompletedTasks()
+
 
 
 // Data storage - Initialize the array of To Do items
@@ -55,8 +74,12 @@
 // the function does not need to return anything
 function addToDoItem(text) {
   // Implement the logic to add a task here
-
-  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+  const todoItem = {
+      id: 0,
+      text: text,
+      completed: false,
+  }
+  todoItems.push(todoItem)
 }
 
 // Function to remove a todo to the list
@@ -66,8 +89,11 @@ function addToDoItem(text) {
 // the function does not need to return anything
 function removeToDoItem(todoId) {
   // Implement the logic to add a task here
-
-  console.log("NOT YET IMPLEMENTED"); // Remove this line when you start working on the function
+  todoItems.forEach(element => {
+    if(element.id==0){
+      todoItems.pop(0);
+    }
+  });
 }
 
 // Function to mark a task as completed
